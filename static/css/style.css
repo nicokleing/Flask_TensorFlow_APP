@@ -1,0 +1,76 @@
+/* Estilos básicos aplicados a todo el documento. Establece la fuente predeterminada,
+   elimina los márgenes y paddings por defecto y define un color de fondo. */
+   body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Estilo para el contenedor principal que alinea los elementos centralmente y 
+   utiliza flexbox para un diseño flexible y adaptable. */
+.main-container {
+    display: flex;
+    flex-direction: row; /* Cambia a fila para mostrar los elementos en línea */
+    align-items: flex-start; /* Alinea los elementos al comienzo del contenedor */
+    padding: 20px;
+}
+
+/* Estilos para el contenedor del formulario, definiendo su fondo, relleno,
+   bordes redondeados y sombra para darle un efecto elevado. */
+.form-container {
+    flex: 1; /* Ocupa el espacio restante después de la imagen, adaptándose al tamaño del contenedor */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-left: 20px; /* Espacio entre la imagen y el formulario */
+}
+
+/* Estilo para el contenedor de la imagen, estableciendo su ancho y margen. */
+.image-container {
+    width: 300px; /* Ancho fijo para la imagen */
+    margin-right: 20px; /* Espacio entre la imagen y el formulario */
+}
+
+/* Estilo para las imágenes dentro del contenedor, para que ocupen todo el ancho disponible. */
+.image-container img {
+    width: 100%; /* La imagen se ajusta al ancho del contenedor */
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+}
+
+/* Estilos para cada campo del formulario, incluyendo márgenes y estilos para los inputs. */
+.form-field {
+    margin-bottom: 10px;
+}
+
+.form-field input[type="text"],
+.form-field input[type="number"],
+.form-field input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Estilo para el botón de envío, con colores y transición para el estado hover. */
+.btn-submit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos específicos para pantallas de tabletas y escritorios, utilizando media queries. */
+@media (min-width: 768px) {
+    /* Aquí puedes añadir ajustes específicos para tabletas y escritorios si es necesario. */
+}
+
+/* Estilos específicos para pantallas grandes de escritorio. */
+@media (min-width: 1024px) {
+    /* Aquí puedes añadir ajustes específicos para pantallas grandes si es necesario. */
+}

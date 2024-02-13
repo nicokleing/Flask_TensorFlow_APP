@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Model</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+</head>
+<body>
+    <div class="main-container">
+        <div class="image-container">
+            <img src="/static/assets/DB_Agujas.jpg" alt="Diabetes">
+            <img src="/static/assets/dbts_azucar.jpg" alt="Diabetes">
+            <img src="/static/assets/dbts_glucometro.jpg" alt="Diabetes">             
+        </div>
+        <div class="form-container">
+            <h1>Prediction Model based on TensorFlow and deployed in Flask</h1>
+            <h2>Enter the patient's information:</h2>
+            <form method="POST">
+                
+                {# This hidden_tag is a CSRF security feature. #}
+                {{ form.hidden_tag() }}
+                
+                <div class="form-field">
+                    {{ form.Pregnancies.label }} {{ form.Pregnancies }}
+                    <p>Pregnancies: Number of times the patient has been pregnant. This factor is relevant because gestation can influence insulin resistance. Example 2</p>
+                </div>
+                <div class="form-field">
+                    {{ form.Glucose.label }} {{ form.Glucose }}
+                    <p>Glucose: Plasma glucose concentration in a 2-hour oral glucose tolerance test. Elevated levels may indicate diabetes or prediabetes. Example 150</p>
+                </div>
+                <div class="form-field">
+                    {{form.BloodPressure.label}}{{form.BloodPressure}}
+                    <p>Diastolic Blood Pressure: Diastolic blood pressure measured in mm Hg. Hypertension is a risk factor for the development of type 2 diabetes. Example 80</p>
+                </div>
+                <div class="form-field">
+                    {{form.SkinThickness.label}}{{form.SkinThickness}}
+                    <p>Triceps Skin Thickness: Measurement of triceps skin thickness in mm. It is used as an indirect indicator of the amount of adipose tissue, which may be related to insulin resistance. Example 35</p>
+                </div>
+                <div class="form-field">
+                    {{form.Insulin.label}}{{form.Insulin}}
+                    <p>Insulin: Two hours of serum insulin in mu U/ml. Abnormal insulin levels may indicate problems with secretion or action of insulin. Example 0</p>
+                </div>
+                <div class="form-field">
+                    {{form.BMI.label}}{{form.BMI}}
+                    <p>Body Mass Index (BMI): Weight in kilograms divided by the square of height in meters (kg/m²). Overweight or obesity are significant risk factors for type 2 diabetes. Example 33.6</p>
+                </div>
+                <div class="form-field">
+                    {{form.DiabetesPedigreeFunction.label}}{{form.DiabetesPedigreeFunction}}
+                    <p>Diabetes Genetic Influence (DiabetesPedigreeFunction): A function representing how likely the patient is to have diabetes based on their family history. A higher value indicates a greater genetic risk. Example 0.627</p>
+                </div>
+                <div class="form-field">
+                    {{form.Age.label}}{{form.Age}}
+                    <p>Age: Patient's age in years. The risk of developing type 2 diabetes increases with age. Example 50</p>
+                </div>
+
+                
+                <div class="form-field">
+                    {{ form.submit(class='btn-submit') }}
+                </div>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
